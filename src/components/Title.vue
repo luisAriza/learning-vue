@@ -11,10 +11,4 @@
 h1.title {{ text }}
 </template>
 
-<style scoped lang="scss">
-	.title {
-		font-size: 2.5em;
-		line-height: 1ch;
-		margin-bottom: 1rem;
-	}
-</style>
+<style src="@styles/Title.scss" scoped></style>

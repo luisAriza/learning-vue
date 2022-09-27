@@ -1,6 +1,6 @@
 <script>
-	import Title from "@/components/Title.vue";
-	import Button from "@/components/Button.vue";
+	import Title from "@components/Title.vue";
+	import Button from "@components/Button.vue";
 
 	export default {
 		name: "CardItem",
@@ -25,41 +25,4 @@
 	Button(name="View")
 </template>
 
-<style scoped lang="scss">
-	$dark: #1a1a1a;
-	$light: #f9f9f9;
-
-	.card-item {
-		width: 100%;
-		max-width: 560px;
-		padding: 2rem;
-		border: 2px solid $dark;
-		border-radius: 1rem;
-		transition-duration: 0.5s;
-
-		&:hover {
-			border-color: $light;
-			transition-duration: 0.5s;
-		}
-		& img {
-			width: 100%;
-			margin-bottom: 2rem;
-		}
-		& h2,
-		& p {
-			margin-bottom: 1rem;
-		}
-		.btn {
-			width: 100%;
-		}
-	}
-	@media (prefers-color-scheme: light) {
-		.card-item {
-			border-color: $light;
-
-			&:hover {
-				border-color: $dark;
-			}
-		}
-	}
-</style>
+<style src="@styles/CardItem.scss" scoped></style>
