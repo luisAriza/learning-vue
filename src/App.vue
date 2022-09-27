@@ -10,18 +10,29 @@
 	Button
 </template>
 
-<style scoped>
+<style scoped lang="scss">
+	$dark: #1a1a1a;
+	$light: #f9f9f9;
+
 	.container {
 		max-width: 1280px;
 		margin: 0 auto;
 		padding: 2rem;
 		text-align: center;
-		border: 1px solid #1a1a1a;
-		border-radius: 4%;
+		border: 2px solid $dark;
+		border-radius: 12px;
 		transition-duration: 0.5s;
 	}
 	.container:hover {
-		border-color: #f2f2f2;
-		transition-duration: 0.5ms;
+		border-color: $light;
+		transition-duration: 0.5s;
+	}
+	@media (prefers-color-scheme: light) {
+		.container {
+			border-color: $light;
+		}
+		.container:hover {
+			border-color: $dark;
+		}
 	}
 </style>

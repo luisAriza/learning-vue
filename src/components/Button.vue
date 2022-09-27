@@ -4,7 +4,7 @@
 button Button
 </template>
 
-<style scoped>
+<style scoped lang="scss">
 	button {
 		border-radius: 8px;
 		border: 1px solid transparent;
@@ -15,13 +15,14 @@ button Button
 		background-color: #1a1a1a;
 		cursor: pointer;
 		transition: border-color 0.25s;
-	}
-	button:hover {
-		border-color: #646cff;
-	}
-	button:focus,
-	button:focus-visible {
-		outline: 4px auto -webkit-focus-ring-color;
+
+		&:hover {
+			border-color: #646cff;
+		}
+		&:focus,
+		&:focus-visible {
+			outline: 4px auto -webkit-focus-ring-color;
+		}
 	}
 
 	@media (prefers-color-scheme: light) {
