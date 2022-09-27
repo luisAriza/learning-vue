@@ -1,11 +1,11 @@
 <script setup></script>
 
 <template lang="pug">
-h2 Hello World
+h1 Hello World
 </template>
 
 <style scoped>
-	h2 {
+	h1 {
 		font-size: 3.2em;
 		line-height: 1.1;
 	}

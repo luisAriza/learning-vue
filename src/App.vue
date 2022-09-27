@@ -1,6 +1,6 @@
 <script setup>
-	import HelloWorld from "./components/HelloWorld.vue";
-	import Button from "./components/Button.vue";
+	import HelloWorld from "@/components/HelloWorld.vue";
+	import Button from "@/components/Button.vue";
 </script>
 
 <template lang="pug">
@@ -17,11 +17,11 @@
 		padding: 2rem;
 		text-align: center;
 		border: 1px solid #1a1a1a;
-		border-radius: 8%;
-		transition-duration: 350ms;
+		border-radius: 4%;
+		transition-duration: 0.5s;
 	}
 	.container:hover {
 		border-color: #f2f2f2;
-		transition-duration: 350ms;
+		transition-duration: 0.5ms;
 	}
 </style>
