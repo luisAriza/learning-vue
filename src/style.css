@@ -15,10 +15,17 @@
 	-webkit-text-size-adjust: 100%;
 }
 
-body {
+* {
 	margin: 0;
-	display: flex;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	display: grid;
 	place-items: center;
+	gap: 4rem;
+	padding: 4rem 1rem;
 	min-width: 320px;
 	min-height: 100vh;
 }

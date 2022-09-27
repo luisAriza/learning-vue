@@ -1,21 +1,25 @@
 <script>
-	import HelloWorld from "@/components/HelloWorld.vue";
+	import Title from "@/components/Title.vue";
 	import Button from "@/components/Button.vue";
+	import CardItem from "@/components/CardItem.vue";
 
 	export default {
 		name: "App",
 		components: {
-			HelloWorld,
+			Title,
 			Button,
+			CardItem,
 		},
 	};
 </script>
 
 <template lang="pug">
 .container
-	h1 Mi App
-	HelloWorld(title="Hello World")
+	Title(text="Mi App")
 	Button(name="Button")
+.cards-container
+	CardItem(image="/vue.svg" title="Vue" subtitle="Framework")
+	CardItem(image="/vite.svg" title="Vite" subtitle="Bundler")
 </template>
 
 <style scoped lang="scss">
@@ -23,24 +27,34 @@
 	$light: #f9f9f9;
 
 	.container {
-		max-width: 1280px;
-		margin: 0 auto;
+		width: 100%;
+		max-width: 560px;
 		padding: 2rem;
 		text-align: center;
 		border: 2px solid $dark;
-		border-radius: 12px;
+		border-radius: 1rem;
 		transition-duration: 0.5s;
+
+		&:hover {
+			border-color: $light;
+			transition-duration: 0.5s;
+		}
+		.title {
+			margin-bottom: 2rem;
+		}
 	}
-	.container:hover {
-		border-color: $light;
-		transition-duration: 0.5s;
+	.cards-container {
+		display: grid;
+		gap: 2rem;
 	}
+
 	@media (prefers-color-scheme: light) {
 		.container {
 			border-color: $light;
-		}
-		.container:hover {
-			border-color: $dark;
+
+			&:hover {
+				border-color: $dark;
+			}
 		}
 	}
 </style>

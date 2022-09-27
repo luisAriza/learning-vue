@@ -8,12 +8,11 @@
 </script>
 
 <template lang="pug">
-.button-container
-	button {{ name }}
+button.btn {{ name }}
 </template>
 
 <style scoped lang="scss">
-	button {
+	.btn {
 		border-radius: 8px;
 		border: 1px solid transparent;
 		padding: 0.6em 1.2em;
@@ -34,7 +33,7 @@
 	}
 
 	@media (prefers-color-scheme: light) {
-		button {
+		.btn {
 			background-color: #f9f9f9;
 		}
 	}

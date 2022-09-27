@@ -1,20 +1,20 @@
 <script>
 	export default {
-		name: "HelloWorld",
+		name: "Title",
 		props: {
-			title: String,
+			text: String,
 		},
 	};
 </script>
 
 <template lang="pug">
-.title-container
-	h1 {{ title }}
+h1.title {{ text }}
 </template>
 
 <style scoped lang="scss">
-	h1 {
-		font-size: 3.2em;
-		line-height: 1.1;
+	.title {
+		font-size: 2.5em;
+		line-height: 1ch;
+		margin-bottom: 1rem;
 	}
 </style>
