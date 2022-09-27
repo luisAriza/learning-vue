@@ -1,10 +1,18 @@
-<script setup></script>
+<script>
+	export default {
+		name: "HelloWorld",
+		props: {
+			title: String,
+		},
+	};
+</script>
 
 <template lang="pug">
-h1 Hello World
+.title-container
+	h1 {{ title }}
 </template>
 
-<style scoped>
+<style scoped lang="scss">
 	h1 {
 		font-size: 3.2em;
 		line-height: 1.1;

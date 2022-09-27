@@ -1,13 +1,21 @@
-<script setup>
+<script>
 	import HelloWorld from "@/components/HelloWorld.vue";
 	import Button from "@/components/Button.vue";
+
+	export default {
+		name: "App",
+		components: {
+			HelloWorld,
+			Button,
+		},
+	};
 </script>
 
 <template lang="pug">
 .container
 	h1 Mi App
-	HelloWorld
-	Button
+	HelloWorld(title="Hello World")
+	Button(name="Button")
 </template>
 
 <style scoped lang="scss">

@@ -1,7 +1,15 @@
-<script setup></script>
+<script>
+	export default {
+		name: "Button",
+		props: {
+			name: String,
+		},
+	};
+</script>
 
 <template lang="pug">
-button Button
+.button-container
+	button {{ name }}
 </template>
 
 <style scoped lang="scss">
