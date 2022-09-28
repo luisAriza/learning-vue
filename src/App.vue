@@ -6,15 +6,15 @@
 
 <template lang="pug">
 .container
-	Title(text="My App")
-	Button(name="Button")
+	Title
+	Button
 .cards-container
-	CardItem(image="/vue.svg" title="Vue" subtitle="Framework")
-	CardItem(image="/vite.svg" title="Vite" subtitle="Bundler")
-	CardItem(image="/vue.svg" title="Vue" subtitle="Framework")
-	CardItem(image="/vite.svg" title="Vite" subtitle="Bundler")
-	CardItem(image="/vue.svg" title="Vue" subtitle="Framework")
-	CardItem(image="/vite.svg" title="Vite" subtitle="Bundler")
+	CardItem(image="/vue.svg" name="Vue" subtitle="Framework")
+	CardItem(image="/vite.svg" name="Vite" subtitle="Bundler")
+	CardItem(image="/vue.svg" name="Vue" subtitle="Framework")
+	CardItem(image="/vite.svg" name="Vite" subtitle="Bundler")
+	CardItem(image="/vue.svg" name="Vue" subtitle="Framework")
+	CardItem(image="/vite.svg" name="Vite" subtitle="Bundler")
 </template>
 
 <style src="@styles/App.scss" scoped></style>

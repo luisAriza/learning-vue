@@ -8,9 +8,10 @@
 			Title,
 			Button,
 		},
+		// Propiedades con sintaxis simple
 		props: {
 			image: String,
-			title: String,
+			name: String,
 			subtitle: String,
 		},
 	};
@@ -19,8 +20,8 @@
 <template lang="pug">
 .card-item
 	figure
-		img(:src="image" :alt="title + ' icon'" width="240" height="240")
-	Title(:text="title")
+		img(:src="image" :alt="name + ' icon'" width="240" height="240")
+	Title(:text="name")
 	h2 {{ subtitle }}
 	p Lorem ipsum dolor sit, amet consectetur adipisicing elit. Excepturi saepe accusamus officiis dolores in porro ratione nisi culpa vel totam quibusdam omnis magnam.
 	Button(name="View")

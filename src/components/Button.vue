@@ -1,8 +1,14 @@
 <script>
 	export default {
 		name: "Button",
+		// Propiedades con sintaxis avanzada
 		props: {
-			name: String,
+			name: {
+				type: String,
+				default: "Button",
+				required: false,
+				validator: (value) => value.length >= 3,
+			},
 		},
 	};
 </script>
