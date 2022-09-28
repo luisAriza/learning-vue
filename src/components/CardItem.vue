@@ -19,6 +19,11 @@
 				count: 0,
 			};
 		},
+		computed: {
+			counterText() {
+				return `${this.count} items`;
+			},
+		},
 		methods: {
 			add() {
 				this.count++;
@@ -26,6 +31,14 @@
 			sub() {
 				this.count--;
 			},
+		},
+		watch: {
+			count(current, old) {
+				console.log(`It has changed: ${old} => ${current}`);
+			},
+		},
+		updated() {
+			console.log("I've been updated");
 		},
 	};
 </script>
@@ -39,8 +52,8 @@
 	p Lorem ipsum dolor sit, amet consectetur adipisicing elit. Excepturi saepe accusamus officiis dolores in porro ratione nisi culpa vel totam quibusdam omnis magnam.
 	Button(name="View")
 	.counter
-		h3 {{ count }}
-		Button.btn-counter(name="+" @click="add()")
+		h3 {{ counterText }}
+		Button.btn-counter(name="+" @click="add")
 		Button.btn-counter(name="-" @click="sub()")
 </template>
 
