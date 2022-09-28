@@ -11,10 +11,6 @@
 .cards-container
 	CardItem(image="/vue.svg" name="Vue" subtitle="Framework")
 	CardItem(image="/vite.svg" name="Vite" subtitle="Bundler")
-	CardItem(image="/vue.svg" name="Vue" subtitle="Framework")
-	CardItem(image="/vite.svg" name="Vite" subtitle="Bundler")
-	CardItem(image="/vue.svg" name="Vue" subtitle="Framework")
-	CardItem(image="/vite.svg" name="Vite" subtitle="Bundler")
 </template>
 
 <style src="@styles/App.scss" scoped></style>

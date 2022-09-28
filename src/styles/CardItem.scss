@@ -31,6 +31,22 @@
 	}
 	& .btn {
 		width: 100%;
+		margin-bottom: 1rem;
+	}
+	& .counter {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+		gap: 1rem;
+
+		& h3 {
+			width: 100%;
+			text-align: center;
+		}
+		& .btn-counter {
+			width: auto;
+			margin: 0;
+		}
 	}
 }
 

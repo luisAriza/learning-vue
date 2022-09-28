@@ -7,7 +7,7 @@
 				type: String,
 				default: "Button",
 				required: false,
-				validator: (value) => value.length >= 3,
+				validator: (value) => value.length >= 1,
 			},
 		},
 	};
