@@ -2,7 +2,7 @@
 
 .card-item {
 	width: 100%;
-	max-width: 560px;
+	max-width: 360px;
 	padding: 2rem;
 	border: 2px solid $dark;
 	border-radius: 1rem;
@@ -12,18 +12,24 @@
 		border-color: $light;
 		transition-duration: 0.5s;
 	}
-
+	& figure {
+		display: flex;
+		justify-content: center;
+	}
 	& img {
-		width: 100%;
+		width: auto;
 		margin-bottom: 2rem;
 	}
-
-	& h2,
-	& p {
+	& h2 {
 		margin-bottom: 1rem;
+		font-variation-settings: "wght" 600;
+		color: $variant;
+		opacity: 0.75;
 	}
-
-	.btn {
+	& p {
+		margin-bottom: 1.5rem;
+	}
+	& .btn {
 		width: 100%;
 	}
 }
