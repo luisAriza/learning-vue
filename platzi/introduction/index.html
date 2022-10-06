@@ -8,18 +8,16 @@
 </head>
 <body>
 	<div id="app"></div>
+
 	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.min.js"></script>
 	<script>
 		const vm = new Vue({
 			el: '#app',
       data: {
-				// text: "Hello World"
-				text: "<p>Hello World 2</p>"
+				img: "vue.svg",
+				attr: "alt"
 			},
-			// template: "<p>{{ text }}</p>"
-			// template: "<p v-once>{{ text }}</p>"
-			// template: "<p v-text='text'></p>"
-			template: "<div v-html='text'></div>"
+			template: "<img v-bind:src='img' v-bind:[attr]='img'>"
 		})
 	</script>
 </body>
