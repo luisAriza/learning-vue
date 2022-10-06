@@ -14,14 +14,33 @@
 		const vm = new Vue({
 			el: '#app',
       data: {
-				counter: 0
+				text: "Hello Vue"
 			},
-			methods: {
-				increment() {
-					this.counter++;
-				}
-			},
-			template: `<button v-on:click="increment()">{{ counter }}</button>`
+			// methods: {
+			// 	input(e) {
+			// 		this.text = e.target.value
+			// 	}
+			// },
+			// template: `
+			// 	<div>
+			// 		<p>{{ text }}</p>
+			// 		<input
+			// 			type="text"
+			// 			@change="input"
+			// 			@input="input"
+			// 			:value="text"
+			// 		/>
+			// 	</div>
+			// `
+			template: `
+				<div>
+					<p>{{ text }}</p>
+					<input
+						type="text"
+						v-model="text"
+					/>
+				</div>
+			`
 		})
 	</script>
 </body>
