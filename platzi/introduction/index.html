@@ -1,47 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-	<meta charset="UTF-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<title>Introducción y Fundamentos de VueJs</title>
 </head>
+
 <body>
 	<div id="app"></div>
 
 	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.min.js"></script>
 	<script>
 		const vm = new Vue({
-			el: '#app',
-      data: {
-				text: "Hello Vue"
+			el: "#app",
+			data: {
+				firstName: "Luis",
+				lastName: "Ariza",
+				now: new Date(),
 			},
-			// methods: {
-			// 	input(e) {
-			// 		this.text = e.target.value
-			// 	}
-			// },
-			// template: `
-			// 	<div>
-			// 		<p>{{ text }}</p>
-			// 		<input
-			// 			type="text"
-			// 			@change="input"
-			// 			@input="input"
-			// 			:value="text"
-			// 		/>
-			// 	</div>
-			// `
+			computed: {
+				fullName() {
+					return `${this.firstName} ${this.lastName}`;
+				},
+				today() {
+					return this.now.toLocaleDateString();
+				},
+			},
 			template: `
 				<div>
-					<p>{{ text }}</p>
-					<input
-						type="text"
-						v-model="text"
-					/>
+					<p>{{ fullName }}</p>
+					<p>{{ today }}</p>
 				</div>
-			`
-		})
+			`,
+		});
 	</script>
 </body>
+
 </html>
