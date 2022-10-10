@@ -17,7 +17,8 @@
 			el: "#app",
 			data: {
 				text: "Puerta cerrada",
-				open: false
+				open: false,
+				username: "Luis Ariza"
 			},
 			watch: {
 				text(value, old) {
@@ -32,17 +33,24 @@
 				}
 			},
 			computed: {
-				label() {
-					return this.open ? "Cerrar" : "Abrir"
-				},
+				// label() {
+				// 	return this.open ? "Cerrar" : "Abrir"
+				// },
 				labelClass() {
 					return this.open ? "open" : "close"
 				}
 			},
 			template: `
 				<div class="container" :class="labelClass">
+					<div>
+						<p v-if="open">Bienvenido {{ username }}</p>
+						<p v-else>Abre sesión</p>
+					</div>
 					<h2>{{ text }}</h2>
-					<button @click="open = !open" >{{ label }}</button>
+					<button @click="open = !open" >
+						<span v-if="open">Cerrar</span>
+						<span v-else>Abrir</span>
+					</button>
 				</div>
 			`,
 		});
