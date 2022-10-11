@@ -18,7 +18,25 @@
 			data: {
 				text: "Puerta cerrada",
 				open: false,
-				username: "Luis Ariza"
+				username: "Luis Ariza",
+				posts: [
+					{
+						title: "Titulo",
+						description: "Lorem Ipsum..."
+					},
+					{
+						title: "Titulo",
+						description: "Lorem Ipsum..."
+					},
+					{
+						title: "Titulo",
+						description: "Lorem Ipsum..."
+					},
+					{
+						title: "Titulo",
+						description: "Lorem Ipsum..."
+					},
+				]
 			},
 			watch: {
 				text(value, old) {
@@ -46,8 +64,11 @@
 						<p v-if="open">Bienvenido {{ username }}</p>
 						<p v-else>Abre sesión</p>
 					</div>
+					<ul v-show="open">
+						<li v-for="(item, i) in posts" :key="i" class="item">{{ item.title }} {{ i + 1 }}: {{ item.description }}</li>
+					</ul>
 					<h2>{{ text }}</h2>
-					<button @click="open = !open" >
+					<button @click="open = !open">
 						<span v-if="open">Cerrar</span>
 						<span v-else>Abrir</span>
 					</button>
@@ -69,6 +90,13 @@
 
 		.open {
 			background-color: lightgreen;
+		}
+
+		.item {
+			margin: 12px;
+			padding: 20px;
+			border-radius: 8px;
+			border: 1px solid white;
 		}
 
 		button {
