@@ -9,37 +9,31 @@
 </head>
 
 <body>
-	<div id="app"></div>
+	<div id="app">
 
-	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.min.js"></script>
-	<script>
-		const vm = new Vue({
-			el: "#app",
-			template: `
-				<div>
-					<my-layout>
-						<template v-slot:header>
-							<h1>Titulo 2</h1>
-						</template>
-						<template v-slot:content>
-							<p>Lorem ipsum...</p>
-						</template>
-					</my-layout>
-				</div>
+		<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.min.js"></script>
+		<script>
+			const vm = new Vue({
+				el: "#app",
+				data() {
+					return {
+						items: ["uno", "dos", "tres"]
+					}
+				},
+				template: `
+				<ul>
+					<v-item v-for="item in items" v-bind:text="item" />
+				</ul>
 			`
-		});
+			});
 
-		Vue.component("my-layout", {
-			template: `
-				<header>
-					<slot name="header"></slot>
-				</header>
-				<div>
-					<slot name="content"></slot>
-				</div>
-			`
-		});
-	</script>
+			Vue.component("v-item", {
+				props: {
+					text: String
+				},
+				template: `<li>{{ text }}</li>`
+			});
+		</script>
 </body>
 
 </html>
