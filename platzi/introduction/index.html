@@ -20,9 +20,17 @@
 						items: ["uno", "dos", "tres"]
 					}
 				},
+				methods: {
+					remove(i) {
+						this.items = this.items.filter((el, index) => index !== i)
+					}
+				},
 				template: `
 				<ul>
-					<v-item v-for="item in items" v-bind:text="item" />
+					<v-item
+						v-for="(item, i) in items"
+						v-bind:text="item"
+						v-on:remove="remove(i)" />
 				</ul>
 			`
 			});
@@ -31,7 +39,12 @@
 				props: {
 					text: String
 				},
-				template: `<li>{{ text }}</li>`
+				methods: {
+					rm() {
+						this.$emit("remove")
+					}
+				},
+				template: `<li v-on:click="rm">{{ text }}</li>`
 			});
 		</script>
 </body>
