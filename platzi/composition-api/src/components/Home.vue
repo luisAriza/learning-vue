@@ -16,12 +16,18 @@
 				required: true,
 			},
 		},
-		setup(props) {
-			const { firstName, lastName } = toRefs(props);
+		// setup(props, { expose }) {
+		setup(props, context) {
+			console.log(context);
 
+			const { firstName, lastName } = toRefs(props);
 			const fullName = computed(() => {
 				return `${firstName.value} ${lastName.value}`;
 			});
+
+			// expose({
+			// 	fullName,
+			// });
 
 			return {
 				fullName,
