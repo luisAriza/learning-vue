@@ -28,7 +28,7 @@
       </div>
     </aside>
     <article>
-      {{ this.$route.params.chatId }}
+      <router-view />
     </article>
   </section>
 </template>
