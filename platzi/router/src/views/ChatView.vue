@@ -1,8 +1,16 @@
 <script setup>
-  import { ref, computed } from "vue";
-  import { useRoute } from "vue-router";
+  import { ref, computed, defineProps, toRefs } from "vue";
+  // import { useRoute } from "vue-router";
 
-  const route = useRoute();
+  const props = defineProps({
+    chatId: {
+      type: String,
+      default: "",
+    },
+  });
+  const { chatId } = toRefs(props);
+
+  // const route = useRoute();
 
   const messages = ref([
     {
@@ -23,7 +31,7 @@
   ]);
 
   const messagesFiltered = computed(() =>
-    messages.value.filter((msg) => msg.author.toString() === route.params.chatId)
+    messages.value.filter((msg) => msg.author.toString() === chatId.value)
   );
 </script>
 
