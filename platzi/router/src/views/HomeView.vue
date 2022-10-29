@@ -5,8 +5,7 @@
   const router = useRouter();
   const user = ref("");
   const login = () => {
-    // router.push("/chats");
-
+    router.push("/chats");
     // router.push({
     // path: "/chats",
     // name: "chat",
@@ -17,10 +16,8 @@
     //   idChat: username.value,
     // },
     // });
-
     // router.replace("/chats");
-
-    router.go(-1);
+    // router.go(-1);
   };
 </script>
 
