@@ -1,9 +1,18 @@
 import { createRouter, createWebHashHistory } from "vue-router";
 import HomeView from "@/views/HomeView.vue";
+import ErrorView from "@/views/404View.vue";
 
 const router = createRouter({
 	history: createWebHashHistory(import.meta.env.BASE_URL),
 	routes: [
+		{
+			path: "/404",
+			component: ErrorView,
+		},
+		{
+			path: "/:catchAll(.*)",
+			redirect: "/404",
+		},
 		// Redireccion
 		// {
 		// 	path: "/home",
@@ -49,7 +58,7 @@ const router = createRouter({
 			},
 			children: [
 				{
-					path: ":chatId",
+					path: ":chatId(\\d+)",
 					component: () => import("@/views/ChatView.vue"),
 					// props: true,
 					// props: {
