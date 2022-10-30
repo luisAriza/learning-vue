@@ -6,6 +6,7 @@
   const user = ref("");
   const login = () => {
     router.push("/chats");
+
     // router.push({
     // path: "/chats",
     // name: "chat",
@@ -17,6 +18,7 @@
     // },
     // });
     // router.replace("/chats");
+
     // router.go(-1);
   };
 </script>

@@ -1,20 +1,23 @@
 <script setup>
-  import { ref } from "vue";
+  import { ref, watchEffect } from "vue";
+  import { useRoute } from "vue-router";
 
-  const chats = ref([
-    {
-      id: 1,
-      name: "Luis",
+  const route = useRoute();
+  const chats = ref();
+
+  watchEffect(
+    () => {
+      console.log("params", route.params);
+      chats.value = [
+        { id: 1, name: "Luis" },
+        { id: 2, name: "Milena" },
+        { id: 3, name: "Patricio" },
+      ];
     },
-    {
-      id: 2,
-      name: "Milena",
-    },
-    {
-      id: 3,
-      name: "Patricio",
-    },
-  ]);
+    () => {
+      return { immediate: true };
+    }
+  );
 </script>
 
 <template>
