@@ -1,13 +1,13 @@
 <script setup>
-	import { RouterView } from "vue-router";
+import { RouterView } from 'vue-router'
 </script>
 
 <template>
-	<RouterView />
+  <RouterView />
 </template>
 
-<style lang="postcss">
-	body {
-		@apply bg-neutral-900 text-gray-200;
-	}
+<style lang="scss">
+body {
+  @apply bg-neutral-900 text-gray-200;
+}
 </style>
