@@ -7,8 +7,13 @@ const store = createStore({
 		};
 	},
 	getters: {
-		firstName: (state) => (c) => {
-			return state.username.split("").join(c);
+		firstName: (state) => (char) => {
+			return state.username.split("").join(char);
+		},
+	},
+	mutations: {
+		updateUsername(state, username) {
+			state.username = username;
 		},
 	},
 });

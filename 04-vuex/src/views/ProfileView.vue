@@ -1,10 +1,16 @@
 <script>
-	import store from "@/store/store.js";
+	import { mapState, mapMutations } from "vuex";
 	export default {
 		data() {
-			return {
-				store,
-			};
+			return {};
+		},
+		computed: {
+			...mapState({
+				username: (state) => state.username,
+			}),
+		},
+		methods: {
+			...mapMutations(["updateUsername"]),
 		},
 	};
 </script>
@@ -17,10 +23,10 @@
 			<input
 				type="text"
 				placeholder="Jane Smith"
-				:value="store.username"
-				@input="store.updateUsername($event.target.value)"
+				:value="username"
+				@input="updateUsername($event.target.value)"
 			/>
-			<button>Acceder</button>
+			<button @click="$router.push('/')">Acceder</button>
 		</div>
 	</div>
 </template>
