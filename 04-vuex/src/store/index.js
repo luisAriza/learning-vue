@@ -16,6 +16,12 @@ const store = createStore({
 			state.username = username;
 		},
 	},
+	actions: {
+		updateUsername({ commit, state }, username) {
+			console.log("Update username action: ", state.username, username);
+			commit("updateUsername", username);
+		},
+	},
 });
 
 export default store;

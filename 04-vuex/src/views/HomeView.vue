@@ -1,9 +1,9 @@
 <script>
 	import { RouterView, RouterLink } from "vue-router";
+	import { mapState, mapGetters } from "vuex";
 	import InputSearch from "@/components/InputSearch.vue";
 	import ProfileCard from "@/components/ProfileCard.vue";
 	import ChatItem from "@/components/ChatItem.vue";
-	import { mapState, mapGetters } from "vuex";
 
 	export default {
 		components: {
