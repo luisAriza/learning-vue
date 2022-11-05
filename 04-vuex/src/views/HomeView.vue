@@ -3,7 +3,7 @@
 	import InputSearch from "@/components/InputSearch.vue";
 	import ProfileCard from "@/components/ProfileCard.vue";
 	import ChatItem from "@/components/ChatItem.vue";
-	import store from "@/store/store.js";
+	import { mapState } from "vuex";
 
 	export default {
 		components: {
@@ -15,7 +15,6 @@
 		},
 		data() {
 			return {
-				store,
 				search: "",
 				profile: {
 					username: "Luis Ariza",
@@ -32,6 +31,9 @@
 				],
 			};
 		},
+		computed: mapState({
+			username: (state) => state.username,
+		}),
 	};
 </script>
 
@@ -41,7 +43,7 @@
 			<InputSearch v-model="search" />
 			<ProfileCard
 				:avatar="profile.avatar"
-				:username="store.username"
+				:username="username"
 				:status="profile.status"
 			/>
 			<RouterLink to="/" class="channels-title"
