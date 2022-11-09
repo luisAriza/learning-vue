@@ -10,7 +10,7 @@
 			}),
 		},
 		methods: {
-			...mapActions(["updateUsername"]),
+			...mapActions("profile", ["updateUsername"]),
 		},
 	};
 </script>

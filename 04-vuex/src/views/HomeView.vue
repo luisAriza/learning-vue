@@ -18,7 +18,6 @@
 				search: "",
 				profile: {
 					username: "Luis Ariza",
-					status: "active",
 					avatar: "/avatars/avatar.jpg",
 				},
 				channels: [
@@ -32,8 +31,8 @@
 			};
 		},
 		computed: {
-			...mapState(["username"]),
-			...mapGetters(["firstName"]),
+			...mapState(["status"]),
+			...mapGetters("profile", ["firstName"]),
 		},
 	};
 </script>
@@ -45,7 +44,7 @@
 			<ProfileCard
 				:avatar="profile.avatar"
 				:username="firstName('')"
-				:status="profile.status"
+				:status="status"
 			/>
 			<RouterLink to="/" class="channels-title"
 				>Canales <Icon icon="carbon:hashtag"
