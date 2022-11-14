@@ -33,6 +33,7 @@
 		computed: {
 			...mapState(["status"]),
 			...mapGetters("profile", ["firstName"]),
+			...mapGetters("channels", ["getChannels"]),
 		},
 	};
 </script>
@@ -51,11 +52,11 @@
 			/></RouterLink>
 			<div class="channels">
 				<ChatItem
-					v-for="channel in channels"
+					v-for="channel in getChannels"
 					:key="channel.id"
 					:id="channel.id"
 					:name="channel.name"
-					:messages="channel.messages"
+					:messages="channel.messages.length"
 				/>
 			</div>
 		</aside>
