@@ -11,10 +11,20 @@ const module = {
 		};
 	},
 	getters: {
-		getChannels: (state) => (search) => {
-			return state.channels.filter((channel) =>
-				channel.name.toLowerCase().includes(search.toLowerCase())
-			);
+		getChannels: (state, getters, rootState, rootGetters) => (search) => {
+			return state.channels
+				.filter((channel) =>
+					channel.name.toLowerCase().includes(search.toLowerCase())
+				)
+				.map((channel) => {
+					const messages = channel.messages.map((id) =>
+						rootGetters["messages/getMessage"](id)
+					);
+					return {
+						...channel,
+						messagesCount: messages.filter((msg) => msg.read === false).length,
+					};
+				});
 		},
 	},
 };
