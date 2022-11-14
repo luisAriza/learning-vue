@@ -56,7 +56,7 @@
 					:key="channel.id"
 					:id="channel.id"
 					:name="channel.name"
-					:messages="channel.messagesCount"
+					:messages="channel.messages"
 				/>
 			</div>
 		</aside>

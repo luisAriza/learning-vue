@@ -3,10 +3,10 @@ const module = {
 	state() {
 		return {
 			channels: [
-				{ id: 1, name: "Canal 1", messages: [] },
-				{ id: 2, name: "Canal 2", messages: [] },
-				{ id: 3, name: "Canal 3", messages: [] },
-				{ id: 4, name: "Canal 4", messages: [] },
+				{ id: 1, name: "Canal 1", messages: null },
+				{ id: 2, name: "Canal 2", messages: null },
+				{ id: 3, name: "Canal 3", messages: null },
+				{ id: 4, name: "Canal 4", messages: null },
 			],
 		};
 	},
@@ -17,12 +17,13 @@ const module = {
 					channel.name.toLowerCase().includes(search.toLowerCase())
 				)
 				.map((channel) => {
-					const messages = channel.messages.map((id) =>
-						rootGetters["messages/getMessage"](id)
+					const messages = rootGetters["messages/getUnreadMessages"](
+						channel.id
 					);
+					console.log(messages);
 					return {
 						...channel,
-						messagesCount: messages.filter((msg) => msg.read === false).length,
+						messages,
 					};
 				});
 		},
