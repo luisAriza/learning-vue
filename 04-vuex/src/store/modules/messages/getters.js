@@ -1,9 +1,8 @@
 const getters = {
-	getMessages(state) {
-		return state.messages;
-	},
-	getMessage: (state) => (id) => {
-		return state.messages.find((message) => message.id === id);
+	getMessages: (state) => (channelId) => {
+		return state.messages.filter(
+			(message) => message.channelId === parseInt(channelId)
+		);
 	},
 };
 
