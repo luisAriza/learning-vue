@@ -4,7 +4,11 @@
 	import ProfileCard from "@/components/ProfileCard.vue";
 	import ChatItem from "@/components/ChatItem.vue";
 	import { ref, reactive } from "vue";
+	import useProfileStore from "@/stores/profile.js";
+
+	const profileStore = useProfileStore();
 	const search = ref("");
+
 	const profile = reactive({
 		username: "Diana Nerd",
 		status: "active",
@@ -25,9 +29,9 @@
 		<aside>
 			<InputSearch v-model="search" />
 			<ProfileCard
-				:avatar="profile.avatar"
-				:username="profile.username"
-				:status="profile.status"
+				:avatar="profileStore.avatar"
+				:username="profileStore.username"
+				:status="profileStore.status"
 			/>
 			<RouterLink to="/" class="channels-title"
 				>Canales <Icon icon="carbon:hashtag"
@@ -47,7 +51,6 @@
 		</main>
 	</div>
 </template>
-
 <style lang="postcss" scoped>
 	.home {
 		@apply flex h-screen;
