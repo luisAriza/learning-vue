@@ -1,7 +1,6 @@
 <script>
 	import MessageItem from "@/components/MessageItem.vue";
 	import { mapGetters } from "vuex";
-
 	export default {
 		components: {
 			MessageItem,
@@ -12,19 +11,21 @@
 				title: "Nombre del canal",
 				people: [
 					{ id: 1, name: "Tú", avatar: "/avatars/avatar.jpg" },
-					{ id: 2, name: "Jessie", avatar: "/avatars/avatar-02.jpg" },
+					{ id: 2, name: "Jason", avatar: "/avatars/avatar-02.jpg" },
 					{ id: 3, name: "Janet", avatar: "/avatars/avatar-03.jpg" },
 				],
 			};
 		},
 		computed: {
 			...mapGetters("messages", ["getMessages"]),
+			...mapGetters("contacts", ["getContactById"]),
 			messagesView() {
 				return this.getMessages(this.channelId)?.map((message) => {
 					const author = this.people.find((p) => p.id === message.author);
 					if (!author) return message;
 					return {
 						...message,
+
 						author,
 						self: author.id === 1,
 					};
@@ -52,7 +53,6 @@
 		},
 	};
 </script>
-
 <template>
 	<div class="messages">
 		<header>
@@ -83,7 +83,6 @@
 		</footer>
 	</div>
 </template>
-
 <style lang="postcss" scoped>
 	.messages {
 		@apply flex flex-col h-full;

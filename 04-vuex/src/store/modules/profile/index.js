@@ -8,7 +8,13 @@ const module = {
 	namespaced: true,
 	state() {
 		return {
-			username: "ruisu.map",
+			id: 1,
+			username: "",
+			details: {
+				id: 1,
+				name: "Ruisu Map",
+				avatar: "/avatars/avatar.jpg",
+			},
 		};
 	},
 	getters: {
