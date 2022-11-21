@@ -1,18 +1,19 @@
 <script setup>
-	import { ref, computed, watch } from "vue";
+	import { ref, computed, watch, reactive } from "vue";
 	import { useRoute } from "vue-router";
 	import MessageItem from "@/components/MessageItem.vue";
+	import useMessagesStore from "@/stores/messages.js";
 
 	const route = useRoute();
+	const messagesStore = useMessagesStore();
 
 	const end = ref(null);
 	const channelId = ref(null);
 	const title = ref("");
 	const people = reactive([]);
-	const messages = reactive([]);
 
 	const messagesView = computed(() =>
-		messages.map((message) => {
+		messagesStore.findMessagesByChannelId(channelId.value).map((message) => {
 			const author = people.find((p) => p.id === message.author);
 			if (!author) return message;
 			return {
@@ -30,7 +31,7 @@
 	watch(
 		() => route.params.id,
 		(id) => {
-			channelId.value = id;
+			channelId.value = parseInt(id);
 			scrollToBottom();
 		},
 		{ immediate: true }
