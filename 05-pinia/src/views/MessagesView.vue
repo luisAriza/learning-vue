@@ -8,6 +8,8 @@
 	const end = ref(null);
 	const channelId = ref(null);
 	const title = ref("");
+	const people = reactive([]);
+	const messages = reactive([]);
 
 	const messagesView = computed(() =>
 		messages.map((message) => {

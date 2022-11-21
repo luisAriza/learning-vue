@@ -5,8 +5,11 @@
 	import ChatItem from "@/components/ChatItem.vue";
 	import { ref } from "vue";
 	import useProfileStore from "@/stores/profile.js";
+	import useChannelsStore from "@/stores/channels.js";
 
 	const profileStore = useProfileStore();
+	const channelsStore = useChannelsStore();
+
 	const search = ref("");
 </script>
 
@@ -24,7 +27,7 @@
 			/></RouterLink>
 			<div class="channels">
 				<ChatItem
-					v-for="channel in channels"
+					v-for="channel in channelsStore.getChannels(search)"
 					:key="channel.id"
 					:id="channel.id"
 					:name="channel.name"
